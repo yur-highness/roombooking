@@ -1,0 +1,235 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Feb 8, 2025, 11:25:16 PM
+    Author     : yurhighness
+*/
+
+ /* Custom Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: auto;
+    overflow-x:hidden;
+    
+}
+.nav {
+    background-color: indigo;  
+    position: sticky;
+    top: 0; 
+    width: 100%;
+    z-index: 1000; 
+    color: whitesmoke;
+}
+
+/* Hero Section */
+#home {
+    background: url('../img/arthur-hinton-X-iBG8NEXaI-unsplash.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    color: white;
+    animation: fadeIn 2s ease-in-out;
+    position: relative;
+}
+.hero{
+    position: absolute;
+    left: 60%;
+}
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+    .hero {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Features Section */
+#features .card-panel {
+    transition: transform 0.3s ease-in-out;
+}
+
+#features .card-panel:hover {
+    transform: translateY(-10px);
+}
+
+/* Rooms Section */
+#rooms .card {
+    transition: transform 0.3s ease-in-out;
+}
+
+#rooms .card:hover {
+    transform: translateY(-10px);
+}
+
+/* Testimonials Section */
+#testimonials .card-panel {
+    transition: transform 0.3s ease-in-out;
+}
+
+#testimonials .card-panel:hover {
+    transform: translateY(-10px);
+}
+
+/* Contact Section */
+#contact form {
+    animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Footer */
+footer {
+    animation: fadeIn 2s ease-in-out;
+ 
+    width: 100%;
+    color:whitesmoke;
+}
+
+
+.margin{
+    margin-top: 20%;
+    margin-bottom: 20%;
+}
+
+
+.margin1{
+    margin-top: 20%;
+    margin-bottom: 40%;
+}
+
+.sm-margin{
+    margin-top: 25px;
+}
+
+
+
+    .room-card {
+            transition: transform 0.3s ease-in-out;
+        }
+        .room-card:hover {
+            transform: translateY(-5px);
+        }
+        .price-tag {
+            font-size: 1.5rem;
+            color: #2e7d32;
+            font-weight: bold;
+        }
+        
+        
+        
+  .time-display {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: -10px;
+        }
+   .price-calc {
+            background-color: #e8f5e9;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        
+        
+              .booking-card {
+            margin: 15px 0;
+            border-radius: 10px;
+        }
+        .status-badge {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            padding: 5px 10px;
+            border-radius: 15px;
+        }
+        .price-tag {
+            font-size: 1.4rem;
+            color: #2e7d32;
+            font-weight: bold;
+        }
+        
+        
+            .dashboard-nav {
+            padding: 20px;
+            background-color:rgb(30 136 229);
+            height: 100vh;
+            position: fixed;
+            width: 240px;
+           
+        }
+        
+        .white{
+            color: white;
+            border-radius: 20px;
+            text-align: center;
+            padding: 10px 5px;
+        }
+        
+     
+     
+        .main-content {
+            margin-left: 240px;
+            padding: 30px;
+        }
+        .stats-card {
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .stats-card:hover {
+            transform: translateY(-5px);
+        }
+        .data-table {
+            margin-top: 30px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        @media only screen and (max-width: 992px) {
+            .dashboard-nav {
+                width: 100%;
+                position: relative;
+                height: auto;
+            }
+            .main-content {
+                margin-left: 0;
+            }
+        }
+        
+        
+          .booking-table {
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .status-chip {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        .upcoming { background: #fff3e0; color: #ef6c00; }
+        .active { background: #e8f5e9; color: #2e7d32; }
+        .completed { background: #f5f5f5; color: #616161; }
+        .cancelled { background: #ffebee; color: #c62828; }
+        .hoverable-row:hover {
+            background-color: #f5f5f5 !important;
+            cursor: pointer;
+        }
+        
+ 
