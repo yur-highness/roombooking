@@ -17,11 +17,11 @@
     
     try {
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Online", "root", "");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotelbooking", "root", "");
         
         // Get booking details first
         PreparedStatement ps = con.prepareStatement(
-            "SELECT room_type, no_of_rooms FROM book WHERE booking_id = ?");
+            "SELECT room_type, num_rooms FROM booking_data WHERE booking_id = ?");
         ps.setString(1, bookingId);
         ResultSet rs = ps.executeQuery();
         
@@ -38,14 +38,14 @@
             
             // Delete booking
             PreparedStatement deleteBooking = con.prepareStatement(
-                "DELETE FROM book WHERE booking_id = ?");
+                "DELETE FROM booking_data WHERE booking_id = ?");
             deleteBooking.setString(1, bookingId);
             deleteBooking.executeUpdate();
         }
         
         con.close();
-        response.sendRedirect("mybookings.jsp?success=1");
+        response.sendRedirect("mybooking.jsp?success=1");
     } catch(Exception e) {
-        response.sendRedirect("mybookings.jsp?error=1");
+        response.sendRedirect("mybooking.jsp?error=1");
     }
 %>

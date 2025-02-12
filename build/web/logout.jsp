@@ -12,7 +12,7 @@
     response.setHeader("Expires", "0"); // Proxies
 
     // Invalidate the session
-    HttpSession session = request.getSession(false); // Get existing session, don't create a new one
+ // Get existing session, don't create a new one
     if (session != null) {
         session.invalidate(); // Completely destroy the session
     }
