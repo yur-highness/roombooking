@@ -20,21 +20,22 @@
 %>
 <% 
   // Get user details from session
-    String username = (String) session.getAttribute("user");
+    String userEmail = (String) session.getAttribute("user");
     String userPhone = "";
-    String userEmail = "";
+    String username = "";
     
     try {
-        Class.forName("com.mysql.jdbc.Driver");
+        Class.forName("com.mysql.cj.jdbc.Driver");
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotelbooking", "root", "");
         
-        PreparedStatement ps = con.prepareStatement("SELECT * FROM user_data WHERE username=?");
-        ps.setString(1, username);
+        PreparedStatement ps = con.prepareStatement("SELECT * FROM user_data WHERE email=?");
+        ps.setString(1, userEmail);
         ResultSet rs = ps.executeQuery();
         
         if(rs.next()) {
            userEmail= rs.getString("email");
             userPhone = rs.getString("phone");
+            username = rs.getString("username");
         }
         con.close();
     } catch(Exception e) {

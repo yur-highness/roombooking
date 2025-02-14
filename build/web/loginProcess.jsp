@@ -14,7 +14,7 @@
     
 
     try {
-        Class.forName("com.mysql.jdbc.Driver");
+        Class.forName("com.mysql.cj.jdbc.Driver");
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotelbooking", "root", "");
         
         // Check admin table
@@ -34,12 +34,14 @@
         ps = con.prepareStatement("SELECT * FROM user_data WHERE username=? AND password=?");
         ps.setString(1, username);
         ps.setString(2, password);
+       
         rs = ps.executeQuery();
     
        
         
         if(rs.next()) {
-            session.setAttribute("user", username);
+            String email = rs.getString("email");
+            session.setAttribute("user", email);
             response.sendRedirect("index.jsp?name="+username);
         } 
         else {

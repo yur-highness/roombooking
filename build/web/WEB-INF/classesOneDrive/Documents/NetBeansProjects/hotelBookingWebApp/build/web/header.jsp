@@ -6,6 +6,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%@ page import="java.sql.*, java.text.SimpleDateFormat" %>
+<jsp:include page="dbcon.jsp" />
 
 
 
@@ -39,11 +40,22 @@
                 <li><a href="book.jsp">Book a Room</a></li>
               
 <li>
-    Hello,<%
-      
-        String title = request.getParameter("name");
-        out.print(title);
-    %>
+   <%
+    String userEmail = (String) session.getAttribute("user");
+     String Admin = (String) session.getAttribute("admin");
+%>
+
+<li>
+    <% if (userEmail != null) { %>
+        Hello, <%= userEmail %>
+    <% }
+    else if(Admin !=null){ %>
+              Hello, <%= Admin %>
+
+  <% }else { %>
+        Guest
+    <% } %>
+</li>
 </li>
                 
                 <li><a href="login.jsp" class="btn waves-effect waves-light">Login</a></li>
